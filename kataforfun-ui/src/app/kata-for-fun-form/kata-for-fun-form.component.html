@@ -1,3 +1,13 @@
 <div class="container"> 
-    To Be Completed
+
+    <form [formGroup]="conversionForm">
+        <div class="form-group">
+            <label for="numberInput">Number to convert</label>
+            <input type="number" class="form-control" id="numberInput" placeholder="Enter a number to convert" formControlName="inputNumber" id="numberInput" required>
+          </div>
+    </form>
+
+    <button class="btn btn-primary btn-lg" 
+     (click)="submitNumber()" 
+    [disabled]="!conversionForm.valid" data-toggle="tooltip" data-placement="top" [title]="conversionForm.valid? 'Convert Number' : 'Please enter a valid number to convert'">Convert</button>
 </div>

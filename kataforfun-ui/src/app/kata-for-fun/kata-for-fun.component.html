@@ -1,6 +1,12 @@
 <div>
-<div class="container">
-    <h2>Already converted values : </h2>
+    <div class="container">
+        <h2>Already converted values : </h2>
+        <ng-container *ngFor="let converted of alreadyConverted">
+        <div class="alert alert-success" role="alert" >
+            {{converted.numberToConvert}} and the result for is {{converted.result}}
+          </div>
+        </ng-container>
+    </div>
+    <app-kata-for-fun-form (submitNumberOutput)="convertNumber($event)"></app-kata-for-fun-form>
 </div>
-<app-kata-for-fun-form (submitNumberOutput)="convertNumber($event)"></app-kata-for-fun-form>
-</div>
+    
